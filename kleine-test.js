@@ -17,10 +17,10 @@ app.use(bodyParser.json());
 
 
 reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.given-name)
+    console.log("params vraag 1 hier ----------------------------------------------------------", params.any)
     let response = ""
 
-    if (params.given-name === antwoorden.vraag1) {
+    if (params.any === antwoorden.vraag1) {
          response = "Helemaal goed! "
     } else {
          response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1} `
@@ -46,11 +46,11 @@ reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
 });
 
 reqproces.intent('Kleine Test - Vraag 3 - antwoord', (conv, params) => {
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.given-name)
+    console.log("params vraag 1 hier ----------------------------------------------------------", params.any)
     let response = ""
 
 
-    if (params.given-name === antwoorden.vraag3) {
+    if (params.any === antwoorden.vraag3) {
          response = "Helemaal goed! "
     } else {
         response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag3} `
