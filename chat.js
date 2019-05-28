@@ -13,12 +13,37 @@ const reqproces = dialogflow({
 });
 
 
-reqproces.intent('test', (conv, params) => {
-        conv.ask(`this is what i got`, params);
+reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
+    const response = undefined
+
+    if (params.any = antwoorden.vraag1) {
+         response = "Helemaal goed!"
+    } else {
+         response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1}`
+    }
+
+    conv.ask(response);
 });
 
+reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
+    const response = undefined
+
+    if (params.temperature = antwoorden.vraag2) {
+         response = "Helemaal goed!"
+    } else {
+        response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag2}`
+    }
+
+    conv.ask(response);
+});
+
+const antwoorden = {
+    vraag1: 'Amsterdam',
+    vraag2: '100'
+}
+
 reqproces.fallback((conv) => {
-    conv.ask(`I couldn't understand. You can change your name or say something in the chat with this app`);
+    conv.ask(`I couldn't understand`);
 });
 
 reqproces.catch((conv, error) => {
