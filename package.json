@@ -2,9 +2,9 @@
   "name": "meesterproef",
   "version": "0.0.1",
   "description": "meesterproef",
-  "main": "chat.js",
+  "main": "kleine-test.js",
   "scripts": {
-    "start": "nodemon chat.js",
+    "start": "nodemon kleine-test.js",
     "deploy": "git add . && git commit -am \"make it better\" && git push heroku master && heroku logs --tail"
   },
   "dependencies": {

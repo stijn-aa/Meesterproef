@@ -20,34 +20,50 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
     console.log("params vraag 1 hier ----", params)
     let response = ""
 
-    if (params.raw === antwoorden.vraag1) {
-         response = "Helemaal goed!"
+    if (params.geo-capital === antwoorden.vraag1) {
+         response = "Helemaal goed! "
     } else {
-         response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1}`
+         response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1} `
     }
 
     conv.ask(response);
-    conv.ask("Volgende vraag: Wat is het kookpunt van water?");
+    conv.ask("Volgende vraag: Wat is het kookpunt van water? ");
 });
 
 reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
-    console.log("params vraag 1 hier ----", params)
+    console.log("params vraag 2 hier ----", params)
     let response = ""
 
 
     if (params.temperature === antwoorden.vraag2) {
-         response = "Helemaal goed!"
+         response = "Helemaal goed! "
     } else {
-        response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag2}`
+        response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag2} `
     }
 
     conv.ask(response);
-    conv.ask("dit was de kleine test");
+    conv.ask("Volgende vraag: Wat is het engelse woord voor ongemakkelijk? ");
+});
+
+reqproces.intent('Kleine Test - Vraag 3 - antwoord', (conv, params) => {
+    console.log("params vraag 3 hier ----", params)
+    let response = ""
+
+
+    if (params.temperature === antwoorden.vraag3) {
+         response = "Helemaal goed! "
+    } else {
+        response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag3} `
+    }
+
+    conv.ask(response);
+    conv.ask("Dit was de kleine test ");
 });
 
 const antwoorden = {
     vraag1: 'Amsterdam',
-    vraag2: '100'
+    vraag2: '100',
+    vraag3: 'awkward'
 }
 
 reqproces.fallback((conv) => {
