@@ -13,9 +13,10 @@ const reqproces = dialogflow({
 });
 
 
+
 reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
-    console.log(params)
-    const response = undefined
+    console.log("params vraag 1 hier ----", params)
+    let response = ""
 
     if (params.any = antwoorden.vraag1) {
          response = "Helemaal goed!"
@@ -27,8 +28,8 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 });
 
 reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
-    console.log(params)
-    const response = undefined
+    console.log("params vraag 1 hier ----", params)
+    let response = ""
 
 
     if (params.temperature = antwoorden.vraag2) {
