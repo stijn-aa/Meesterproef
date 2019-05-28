@@ -17,13 +17,10 @@ app.use(bodyParser.json());
 
 
 reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.raw)
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.rawText)
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.textValue)
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.name)
+    console.log("params vraag 1 hier ----------------------------------------------------------", params.given-name)
     let response = ""
 
-    if (params.raw === antwoorden.vraag1) {
+    if (params.given-name === antwoorden.vraag1) {
          response = "Helemaal goed! "
     } else {
          response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1} `
@@ -34,11 +31,11 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 });
 
 reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.raw)
+    console.log("params vraag 1 hier ----------------------------------------------------------", params.number)
     let response = ""
 
 
-    if (params.temperature === antwoorden.vraag2) {
+    if (params.number === antwoorden.vraag2) {
          response = "Helemaal goed! "
     } else {
         response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag2} `
@@ -49,11 +46,11 @@ reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
 });
 
 reqproces.intent('Kleine Test - Vraag 3 - antwoord', (conv, params) => {
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.raw)
+    console.log("params vraag 1 hier ----------------------------------------------------------", params.given-name)
     let response = ""
 
 
-    if (params.raw === antwoorden.vraag3) {
+    if (params.given-name === antwoorden.vraag3) {
          response = "Helemaal goed! "
     } else {
         response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag3} `
@@ -61,6 +58,7 @@ reqproces.intent('Kleine Test - Vraag 3 - antwoord', (conv, params) => {
 
     conv.ask(response);
     conv.ask("Dit was de kleine test ");
+    conv.ask("This is a text to check if the bot changes his language setting automatically ");
 });
 
 const antwoorden = {
