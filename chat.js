@@ -1,4 +1,5 @@
 var express = require("express");
+var bodyParser = require('body-parser');
 var app = express();
 var server = require('http').createServer(app);
 const {
@@ -12,6 +13,7 @@ const reqproces = dialogflow({
     debug: true
 });
 
+app.use(bodyParser.json());
 
 
 reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
