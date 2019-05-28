@@ -20,13 +20,14 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
     console.log("params vraag 1 hier ----", params)
     let response = ""
 
-    if (params.any = antwoorden.vraag1) {
+    if (params.raw = antwoorden.vraag1) {
          response = "Helemaal goed!"
     } else {
          response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1}`
     }
 
     conv.ask(response);
+    conv.ask("Volgende vraag: Wat is het kookpunt van water?");
 });
 
 reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
@@ -63,3 +64,8 @@ const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
     console.log(`Our app is running on port ${ PORT }`);
 })
+
+
+// conv.followup('apply-for-license-event', {
+//     date: new Date().toISOString(),
+//   })
