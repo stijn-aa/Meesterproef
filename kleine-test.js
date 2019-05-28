@@ -20,7 +20,7 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
     console.log("params vraag 1 hier ----", params)
     let response = ""
 
-    if (params.geo-capital === antwoorden.vraag1) {
+    if (params.raw === antwoorden.vraag1) {
          response = "Helemaal goed! "
     } else {
          response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1} `
@@ -50,7 +50,7 @@ reqproces.intent('Kleine Test - Vraag 3 - antwoord', (conv, params) => {
     let response = ""
 
 
-    if (params.temperature === antwoorden.vraag3) {
+    if (params.raw === antwoorden.vraag3) {
          response = "Helemaal goed! "
     } else {
         response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag3} `
