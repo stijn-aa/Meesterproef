@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 
 reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
-    console.log("params vraag 1 hier ----", params)
+    console.log("params vraag 1 hier ----", params.raw)
     let response = ""
 
     if (params.raw === antwoorden.vraag1) {
@@ -31,7 +31,7 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 });
 
 reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
-    console.log("params vraag 2 hier ----", params)
+    console.log("params vraag 1 hier ----", params.raw)
     let response = ""
 
 
@@ -46,7 +46,7 @@ reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
 });
 
 reqproces.intent('Kleine Test - Vraag 3 - antwoord', (conv, params) => {
-    console.log("params vraag 3 hier ----", params)
+    console.log("params vraag 1 hier ----", params.raw)
     let response = ""
 
 
@@ -61,7 +61,7 @@ reqproces.intent('Kleine Test - Vraag 3 - antwoord', (conv, params) => {
 });
 
 const antwoorden = {
-    vraag1: 'Amsterdam',
+    vraag1: 'amsterdam',
     vraag2: '100',
     vraag3: 'awkward'
 }
