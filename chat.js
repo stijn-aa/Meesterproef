@@ -27,6 +27,7 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 
 reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
     const response = undefined
+    
 
     if (params.temperature = antwoorden.vraag2) {
          response = "Helemaal goed!"
