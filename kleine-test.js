@@ -30,7 +30,6 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
     conv.ask("Volgende vraag: Wat is het kookpunt van water? ");
 });
 
-oefenen-taal-niveau
 
 
 reqproces.intent('oefenen-taal-niveau', (conv, params) => {
