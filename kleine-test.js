@@ -15,7 +15,6 @@ const reqproces = dialogflow({
 
 app.use(bodyParser.json());
 
-
 reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
     console.log("params vraag 1 hier ----------------------------------------------------------", params.any)
     let response = ""
@@ -33,7 +32,7 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 
 
 reqproces.intent('oefenen-taal-niveau', (conv, params) => {
-    console.log("params vraag 1 hier ----------------------------------------------------------", params)
+    console.log("params vraag 1 hier ----------------------------------------------------------", params.niveau)
     conv.ask(params);
 });
 
