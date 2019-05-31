@@ -2,6 +2,10 @@ var express = require("express");
 var bodyParser = require('body-parser');
 var app = express();
 var server = require('http').createServer(app);
+const ejs = require('ejs')
+const fs = require('fs')
+app.set('view engine', 'ejs');
+
 const {
     dialogflow,
     actionssdk,
@@ -13,7 +17,15 @@ const reqproces = dialogflow({
     debug: true
 });
 
+let log = "123";
+
 app.use(bodyParser.json());
+app.use(express.static('public'))
+
+app.get('/', function (req, res) {
+    res.render('./index', {log})
+});
+
 
 reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
     console.log("params vraag 1 hier ----------------------------------------------------------", params.any)
@@ -33,7 +45,7 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 
 reqproces.intent('oefenen-taal-niveau', (conv, params) => {
     console.log("params vraag 1 hier ----------------------------------------------------------", params.niveau)
-    conv.ask(params);
+    log = params
 });
 
 
