@@ -43,7 +43,7 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 
 
 
-reqproces.intent('oefenen-taal-niveau', (conv, params) => {
+reqproces.intent('oefenen', (conv, params) => {
     console.log("params vraag 1 hier ----------------------------------------------------------", params.niveau)
     log = JSON.stringify(params)
 });
