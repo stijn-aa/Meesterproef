@@ -17,7 +17,8 @@ const reqproces = dialogflow({
     debug: true
 });
 
-let log = "123";
+let log = "none";
+let log = "none";
 
 app.use(bodyParser.json());
 app.use(express.static('public'))
