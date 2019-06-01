@@ -24,7 +24,8 @@ app.use(express.static('public'))
 
 app.get('/', function (req, res) {
     res.render('./index', {
-        log
+        log,
+        log2
     })
 });
 
@@ -48,18 +49,20 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 reqproces.intent('oefenen', (conv, params) => {
     console.log("params vraag 1 hier ----------------------------------------------------------", params.niveau)
     log = JSON.stringify(params)
-    conv.ask(`top dan gaan we ${params.language} op niveau ${params.number} doen`);
+    conv.ask(`top dan gaan we ${params.language} op niveau ${params.number} doen. `);
 
     conv.data.vraag = 1;
-    conv.ask("vertaal " + vraag(params.language, conv.data.vraag))
+    conv.ask("vertaal " + vraag(params.language, conv.data.vraag).toString())
 
 });
 
 reqproces.intent("vraag", (conv, params) => {
-
+    console.log("antwoord ----------------------------------------------------------", params)
+    log = JSON.stringify(params)
+    log2 = JSON.stringify(conv)
 })
 
-function vraag(taal, curquestion ) {
+function vraag(taal, curquestion) {
 
     const q = Object.keys(taal[curquestion])
     return q
