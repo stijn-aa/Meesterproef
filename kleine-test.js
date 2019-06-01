@@ -23,7 +23,9 @@ app.use(bodyParser.json());
 app.use(express.static('public'))
 
 app.get('/', function (req, res) {
-    res.render('./index', {log})
+    res.render('./index', {
+        log
+    })
 });
 
 
@@ -32,9 +34,9 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
     let response = ""
 
     if (params.any === antwoorden.vraag1) {
-         response = "Helemaal goed! "
+        response = "Helemaal goed! "
     } else {
-         response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1} `
+        response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1} `
     }
 
     conv.ask(response);
@@ -46,46 +48,38 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 reqproces.intent('oefenen', (conv, params) => {
     console.log("params vraag 1 hier ----------------------------------------------------------", params.niveau)
     log = JSON.stringify(params)
+    conv.ask(`top dan gaan we ${params.language} op niveau ${params.number} doen`);
+
+    conv.data.vraag = 1;
+    conv.ask("vertaal " + vraag(params.language, conv.data.vraag))
+
 });
 
+reqproces.intent("vraag", (conv, params) => {
 
+})
 
-reqproces.intent('Kleine Test - Vraag 2 - antwoord', (conv, params) => {
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.number)
-    let response = ""
+function vraag(taal, curquestion ) {
 
-
-    if (params.number === antwoorden.vraag2) {
-         response = "Helemaal goed! "
-    } else {
-        response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag2} `
-    }
-
-    conv.ask(response);
-    conv.ask("Volgende vraag: Wat is het engelse woord voor ongemakkelijk? ");
-});
-
-reqproces.intent('Kleine Test - Vraag 3 - antwoord', (conv, params) => {
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.any)
-    let response = ""
-
-
-    if (params.any === antwoorden.vraag3) {
-         response = "Helemaal goed! "
-    } else {
-        response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag3} `
-    }
-
-    conv.ask(response);
-    conv.ask("Dit was de kleine test ");
-    conv.ask("This is a text to check if the bot changes his language setting automatically ");
-});
-
-const antwoorden = {
-    vraag1: 'amsterdam',
-    vraag2: '100',
-    vraag3: 'awkward'
+    const q = Object.keys(taal[curquestion])
+    console.log(q)
 }
+
+
+const duits = {
+    "goedenmorgen": "guten morgen"
+}
+const engels = {
+    1: {
+        "goedenmorgen": "good morning"
+    },
+    2: {
+        "ongemakkelijk": "awkward"
+    }
+}
+
+
+
 
 reqproces.fallback((conv) => {
     conv.ask(`I couldn't understand`);
