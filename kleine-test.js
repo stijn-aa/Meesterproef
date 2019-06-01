@@ -67,6 +67,7 @@ reqproces.intent("vraag", (conv, params) => {
 function vraag(taal, curquestion) {
 
     const q = Object.keys(taal[curquestion]).toString()
+    console.log("vraag ----------------------------------------------------------",q)
     return q
 }
 
