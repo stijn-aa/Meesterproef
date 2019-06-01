@@ -41,7 +41,7 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
     }
 
     conv.ask(response);
-    conv.ask("Volgende vraag: Wat is het kookpunt van water? ");
+    conv.ask(" Volgende vraag: Wat is het kookpunt van water? ");
 });
 
 
@@ -49,10 +49,11 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 reqproces.intent('oefenen', (conv, params) => {
     console.log("params vraag 1 hier ----------------------------------------------------------", params.niveau)
     log = JSON.stringify(params)
-    conv.ask(`top dan gaan we ${params.language} op niveau ${params.number} doen. `);
+    log2 = JSON.stringify(conv)
+    conv.ask(` top dan gaan we ${params.language} op niveau ${params.number} doen. `);
 
     conv.data.vraag = 1;
-    conv.ask("vertaal " + vraag(params.language, conv.data.vraag).toString())
+    conv.ask(" vertaal " + vraag(params.language, conv.data.vraag))
 
 });
 
@@ -64,7 +65,7 @@ reqproces.intent("vraag", (conv, params) => {
 
 function vraag(taal, curquestion) {
 
-    const q = Object.keys(taal[curquestion])
+    const q = Object.keys(taal[curquestion]).toString()
     return q
 }
 
