@@ -68,7 +68,7 @@ reqproces.intent("vraag", (conv, params) => {
 function vraag(taal, curquestion) {
     let item = undefined;
     
-    taal.forEach(element => {
+    engels.forEach(element => {
         console.log(Object.keys(element).toString())
         if (Object.keys(element).toString() === curquestion.toString()) {
 
