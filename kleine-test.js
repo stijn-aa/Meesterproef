@@ -66,25 +66,26 @@ reqproces.intent("vraag", (conv, params) => {
 })
 
 function vraag(taal, curquestion) {
-    i = 0
-    var item = taal.forEach(element => {
-        console.log(element)
-        if (element[i] === curquestion) {
-            console.log(Object.keys(element))
+    let item = undefined;
+    
+    taal.forEach(element => {
+        console.log(Object.keys(element).toString())
+        if (Object.keys(element).toString() === curquestion.toString()) {
 
-            return Object.keys(element).toString()
+            console.log("joe" ,Object.keys(element[curquestion]).toString())
+
+            item = Object.keys(element[curquestion]).toString()
         }
-        i++
     });
-    console.log("vars ----------------------------------------------------------", item)
+
     return item
 }
 
 const engels = [{
-        "goedenmorgen": "good morning"
+        1:{"goedenmorgen": "good morning"}
     },
     {
-        "ongemakkelijk": "awkward"
+        2:{"ongemakkelijk": "awkward"}
     }
 ]
 
