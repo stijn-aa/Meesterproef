@@ -50,6 +50,7 @@ reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
 reqproces.intent('oefenen', (conv, params) => {
     console.log("params vraag 1 hier ----------------------------------------------------------", params.niveau)
     log = JSON.stringify(params)
+
     log2 = JSON.stringify(conv)
     conv.ask(` top dan gaan we ${params.language} op niveau ${params.number} doen. `);
 
@@ -65,29 +66,27 @@ reqproces.intent("vraag", (conv, params) => {
 })
 
 function vraag(taal, curquestion) {
-    console.log("vars ----------------------------------------------------------",taal, curquestion)
+    i = 0
+    var item = taal.forEach(element => {
+        console.log(element)
+        if (element[i] === curquestion) {
+            console.log(Object.keys(element))
 
-
-    const q = Object.keys(taal[curquestion]).toString()
-    console.log("object ----------------------------------------------------------",taal[curquestion])
-    console.log("keys ----------------------------------------------------------",Object.keys(taal[curquestion]))
-    
-    console.log("vraag ----------------------------------------------------------",q)
-    return q
+            return Object.keys(element).toString()
+        }
+        i++
+    });
+    console.log("vars ----------------------------------------------------------", item)
+    return item
 }
 
-
-const duits = {
-    "goedenmorgen": "guten morgen"
-}
-const engels = {
-    1: {
+const engels = [{
         "goedenmorgen": "good morning"
     },
-    2: {
+    {
         "ongemakkelijk": "awkward"
     }
-}
+]
 
 
 
