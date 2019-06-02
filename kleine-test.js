@@ -55,7 +55,7 @@ reqproces.intent('oefenen', (conv, params) => {
     conv.ask(` top dan gaan we ${params.language} op niveau ${params.number} doen. `);
 
     conv.data.vraag = 1;
-    conv.ask(" vertaal " + vraag(params.language, conv.data.vraag))
+    conv.ask("\n\n vertaal " + vraag(params.language, conv.data.vraag))
 
 });
 
@@ -63,7 +63,7 @@ reqproces.intent("vraag", (conv, params) => {
     console.log("antwoord ----------------------------------------------------------", params)
     log = JSON.stringify(params)
     log2 = JSON.stringify(conv)
-    console.log(params.data)
+    console.log("data ----------------------------------------------------------", params.data.vraag)
     conv.ask(" je zei: "+ conv.toString())
 })
 
