@@ -63,6 +63,8 @@ reqproces.intent("vraag", (conv, params) => {
     console.log("antwoord ----------------------------------------------------------", params)
     log = JSON.stringify(params)
     log2 = JSON.stringify(conv)
+    console.log(params.data)
+    conv.ask(" je zei: "+ conv.toString())
 })
 
 function vraag(taal, curquestion) {
