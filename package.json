@@ -5,7 +5,8 @@
   "main": "kleine-test.js",
   "scripts": {
     "start": "nodemon kleine-test.js",
-    "deploy": "git add . && git commit -am \"make it better\" && git push heroku master && heroku logs --tail"
+    "deploy": "git add . && git commit -am \"make it better\" && git push heroku master && heroku logs --tail",
+    "push": "git add . && git commit -am \"make it better\" && git push origin master"
   },
   "dependencies": {
     "actions-on-google": "^2.6.0",

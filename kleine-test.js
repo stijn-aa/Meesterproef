@@ -17,86 +17,127 @@ const reqproces = dialogflow({
     debug: true
 });
 
-let log = "none";
-let log2 = "none";
+let log = {};
+let log2 = {};
 
 app.use(bodyParser.json());
 app.use(express.static('public'))
 
 app.get('/', function (req, res) {
-    res.render('./index', {
-        log,
-        log2
-    })
+
+    res.json(log)
 });
 
 
-reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.any)
-    let response = ""
+// reqproces.intent('Kleine Test - Vraag 1 - antwoord', (conv, params) => {
+//     console.log("params vraag 1 hier ----------------------------------------------------------", params.any)
+//     let response = ""
 
-    if (params.any === antwoorden.vraag1) {
-        response = "Helemaal goed! "
-    } else {
-        response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1} `
-    }
+//     if (params.any === antwoorden.vraag1) {
+//         response = "Helemaal goed! "
+//     } else {
+//         response = `Helemaal fout! Het goede antwoord was ${antwoorden.vraag1} `
+//     }
 
-    conv.ask(response);
-    conv.ask(" Volgende vraag: Wat is het kookpunt van water? ");
-});
+//     conv.ask(response);
+//     conv.ask(" Volgende vraag: Wat is het kookpunt van water? ");
+// });
 
 
 
 reqproces.intent('oefenen', (conv, params) => {
-    console.log("params vraag 1 hier ----------------------------------------------------------", params.niveau)
-    log = JSON.stringify(params)
-
-    log2 = JSON.stringify(conv)
-    conv.ask(` top dan gaan we ${params.language} op niveau ${params.number} doen. `);
-
-    conv.data.vraag = 1;
-    conv.ask("\n\n vertaal " + vraag(params.language, conv.data.vraag))
-
+    const lifespan = engels.length; // lengte van lijst
+    log = params
+    conv.contexts.set('context1', lifespan, params);
+    conv.ask(` top dan gaan we ${params.language} op niveau ${params.number} doen.`, `vertaal ` + vraag(lifespan));
 });
 
 reqproces.intent("vraag", (conv, params) => {
-    console.log("antwoord ----------------------------------------------------------", params)
-    log = JSON.stringify(params)
-    log2 = JSON.stringify(conv)
-    console.log("data ----------------------------------------------------------", params.data.vraag)
-    conv.ask(" je zei: "+ conv.toString())
+    const context1 = conv.contexts.get('context1');
+    const lifespan = context1.lifespan ? context1.lifespan : 0
+    const antwoord = context1.parameters.antwoord ? context1.parameters.antwoord : undefined
+
+    log = context1
+
+    if (lifespan === 0) {
+        conv.ask(checkAntwoord(antwoord, lifespan + 1))
+        conv.close(`dat waren de vragen `)
+    } else {
+        conv.ask(checkAntwoord(antwoord, lifespan + 1))
+        conv.ask(`vertaal ` + vraag(lifespan))
+    }
+
 })
 
-function vraag(taal, curquestion) {
+reqproces.fallback((conv, params) => {
+    const context1 = conv.contexts.get('context1');
+    console.log(context1)
+    const lifespan = context1.lifespan + 1 ? context1.lifespan : 0
+
+
+
+    conv.ask(`I couldn't understand`); 
+    conv.ask(`vertaal ` + vraag(lifespan))
+});
+
+function vraag(questionNr) {
     let item = undefined;
-    
     engels.forEach(element => {
-        console.log(Object.keys(element).toString())
-        if (Object.keys(element).toString() === curquestion.toString()) {
-
-            console.log("joe" ,Object.keys(element[curquestion]).toString())
-
-            item = Object.keys(element[curquestion]).toString()
+        if (Object.keys(element).toString() === questionNr.toString()) {
+            item = Object.keys(element[questionNr]).toString()
         }
     });
-
     return item
 }
 
+function checkAntwoord(antwoord, questionNr) {
+    engels.forEach(element => {
+        if (Object.keys(element).toString() === questionNr.toString()) {
+            item = Object.values(element[questionNr]).toString()
+        }
+    });
+    console.log("log--------------------------------------------------------------------------------------------", item, antwoord)
+    if (item.toLowerCase() === antwoord.toLowerCase()) {
+        return "Je antwoord is goed"
+    } else {
+        return `Je antwoord is fout, het goede antwoord is ${item}`
+    }
+
+}
+
 const engels = [{
-        1:{"goedenmorgen": "good morning"}
+        1: {
+            "goedenmorgen": "good morning"
+        }
     },
     {
-        2:{"ongemakkelijk": "awkward"}
+        2: {
+            "ongemakkelijk": "awkward"
+        }
+    },
+    {
+        3: {
+            "fiets": "bike"
+        }
+    },
+    {
+        4: {
+            "wanneer gaan we naar de stad?": "when are we going to the city"
+        }
+    },
+    {
+        5: {
+            "opstarten": "boot"
+        }
+    },
+    {
+        6: {
+            "gemeenschap": "community"
+        }
     }
 ]
 
 
-
-
-reqproces.fallback((conv) => {
-    conv.ask(`I couldn't understand`);
-});
 
 reqproces.catch((conv, error) => {
     console.error(error);
