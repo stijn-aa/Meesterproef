@@ -49,7 +49,8 @@ reqproces.intent('oefenen', (conv, params) => {
     const lifespan = engels.length; // lengte van lijst
     log = params
     conv.contexts.set('context1', lifespan, params);
-    conv.ask(` top dan gaan we ${params.language} op niveau ${params.number} doen.`, `vertaal ` + vraag(lifespan));
+    conv.ask(` top dan gaan we ${params.language} op niveau ${params.number} doen.`);
+    conv.ask(`vertaal ` + vraag(lifespan))
 });
 
 reqproces.intent("vraag", (conv, params) => {
@@ -70,14 +71,18 @@ reqproces.intent("vraag", (conv, params) => {
 })
 
 reqproces.fallback((conv, params) => {
+
     const context1 = conv.contexts.get('context1');
-    console.log(context1)
-    const lifespan = context1.lifespan + 1 ? context1.lifespan : 0
 
-
-
-    conv.ask(`I couldn't understand`); 
-    conv.ask(`vertaal ` + vraag(lifespan))
+    if (context1 === undefined) {
+        conv.ask(`What the fuck bedoel je?`);
+    } else {
+        console.log(context1)
+        log = context1
+        //context1.lifespan + 1
+        conv.ask(`I couldn't understand`);
+        conv.ask(`vertaal ` + vraag(lifespan))
+    }
 });
 
 function vraag(questionNr) {
@@ -122,7 +127,7 @@ const engels = [{
     },
     {
         4: {
-            "wanneer gaan we naar de stad?": "when are we going to the city"
+            "stad": "city"
         }
     },
     {
