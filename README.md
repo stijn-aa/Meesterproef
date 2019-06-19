@@ -12,8 +12,7 @@ Naast deze use case hebben we tijdens de gesprekken ook aangehaald dat het ook e
 Tijdens deze meesterproef wil ik 3 onderdelen van de minor uitdiepen. Ik wil in javascript gebruike maken van modules en hier een systeem in aanbrengen. Ik wil leren hoe ik een database moet opzetten en aanspreken. En ik wil kennis maken met BEM in combinatie met SCSS om css structuur te leren. 
 
 Naast deze 3 focus punten ben ik door deze opdracht ook veel met de volgende web design elementen bezig.
--	ux
--	User senario
+-	ux (vocal user experience)
 -	Rapid prototyping
 -	Testing
 
