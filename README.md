@@ -31,23 +31,23 @@ bouwen site, lukken de leerdoelen,
 
 
 ##### user tests
-Om te testen hebben 2 studenten gevraag om te gaan oefenen met de overhoorbot.
+Om te testen hebben 2 studenten gevraagd om te gaan oefenen met de overhoorbot.
 
-1.	De gebruiker ervaart dat het onduidelijk is wanneer er antwoord gegeven mag worden.
-2.	De gebruiker ervaart frustratie wanneer de bot niet goed snapt wat je bedoelt. Heirdoor gaat de bot soms terug naar het begin.
-3.	De gebruiker ervaart dat de woorden die hij zegt wel goed zijn maar de bot deze niet goed rekent. De oorzaak hiervoor is dat aan een woord niet herkent wordt welke taal er gesproken wordt en er dus vanuit wordt gegaan dat het Nederlands is. Een antwoord als “clock” op de vraag ”vertaal klok naar het Engels” wordt verstaan als “klok” en dus fout gerekend.
-4.	De gebruiker ervaart verwarring wanneer hij een melding krijgt dat er nog niet geoefend kan worden door een gebrek aan lijsten terwijl de optie om te gaan oefenen wel gegeven is.
-5.	De gebruiker ervaart verwarring door onvoldoende informatie over wat hij moet zeggen als hij het systeem voor het eerst gebruikt. 
-6.	De gebruiker ervaart onvoldoende overzicht in de mogelijkheden van de app.
+1.    De gebruiker ervaart dat het onduidelijk is wanneer er antwoord gegeven mag worden.
+2.    De gebruiker ervaart frustratie wanneer de bot niet goed snapt wat je bedoelt. Hierdoor gaat de bot soms terug naar het begin.
+3.    De gebruiker ervaart dat de woorden die hij zegt wel goed zijn maar de bot deze niet goed rekent. De oorzaak hiervoor is dat aan een woord niet herkent wordt welke taal er gesproken wordt en er dus vanuit wordt gegaan dat het Nederlands is. Een antwoord als “clock” op de vraag ”vertaal klok naar het Engels” wordt verstaan als “klok” en dus fout gerekend.
+4.    De gebruiker ervaart verwarring wanneer hij een melding krijgt dat er nog niet geoefend kan worden door een gebrek aan lijsten terwijl de optie om te gaan oefenen wel gegeven is.
+5.    De gebruiker ervaart verwarring door onvoldoende informatie over wat hij moet zeggen als hij het systeem voor het eerst gebruikt.
+6.    De gebruiker ervaart onvoldoende overzicht in de mogelijkheden van de app.
 
 Hiervoor hebben we de volgende oplossingen bedacht. Deze zijn deels doorgevoerd en deels advies voor tijdens het doorontwikkelen.
 
-1.	Geluidje na vraag zodat je weet wanneer je mag
-2.	Door context beter op te slaan onthouden vanaf waar de bot de fout in gegaan is en daar de draad oppakken.
-3.	Woorden worden slecht herkent. Zinnen worden goed herkent in de goede taal. Advies om op zinnen te focusen
-4.	Onboarding moet checken of er lijsten zijn en als dat niet zo is optie om te oefenen weglaten
-5.	Voor elke intent een zero state met extra uitleg
-6.	Website met tekst en uitleg zodat mensen op hun eigen snelheid de flow kunnen bekijken en snappen. 
+1.    Geluidje na vraag zodat je weet wanneer je mag
+2.    Door context beter op te slaan onthouden vanaf waar de bot de fout in gegaan is en daar de draad oppakken.
+3.    Woorden worden slecht herkent. Zinnen worden goed herkent in de goede taal. Advies om op zinnen te focussen
+4.    Onboarding moet checken of er lijsten zijn en als dat niet zo is optie om te oefenen weglaten
+5.    Voor elke intent een zero state met extra uitleg
+6.    Website met tekst en uitleg zodat mensen op hun eigen snelheid de flow kunnen bekijken en snappen.
 
 
 
