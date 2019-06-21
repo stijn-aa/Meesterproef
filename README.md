@@ -25,12 +25,22 @@ Na 2 weken zijn we gaan zitten en hebben we een week lang flowcharts gemaakt om 
 
 
 bouwen bot, mijn bijdrage, lukken de leerdoelen,
+code snippet
+
 bouwen site, lukken de leerdoelen,
+code snippet 
+
+
+samenwerking, hoe smooth ging dat.
+git ervaring
 
 
 
 #### Tests
 Om te testen hebben 2 studenten gevraagd om te gaan oefenen met de overhoorbot.
+
+wat ging er goed? uitleg over de setting.
+
 
 1.    De gebruiker ervaart dat het onduidelijk is wanneer er antwoord gegeven mag worden.
 2.    De gebruiker ervaart frustratie wanneer de bot niet goed snapt wat je bedoelt. Hierdoor gaat de bot soms terug naar het begin.
@@ -48,6 +58,8 @@ Hiervoor hebben we de volgende oplossingen bedacht. Deze zijn deels doorgevoerd 
 5.    Voor elke intent een zero state met extra uitleg
 6.    Website met tekst en uitleg zodat mensen op hun eigen snelheid de flow kunnen bekijken en snappen.
 
+
+ beste bevindingen
 
 
 
