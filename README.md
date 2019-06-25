@@ -31,7 +31,23 @@ We hebben geprobeerd om de spraak functie zo veel mogelijk te benutten en het zo
 
 Om dit te realizeren zijn we eind van de 3de week begonnen met coderen. We hebben met trello alle features en to do's bij gehouden. Ik had als leerdoel leren werken met modules en een database. Arrash heeft aan mij uitgelegd hoe dit werkt en ik heb daarna de get list en quiz modules gebouwd. We hebben gewerkt met mongo DB en mongoose in nodeJS. Ik merkte dat ik het snel kon oppakken. De modules waren eenvoudig te bouwen en ik heb samen met arrash de structuur van de database bedacht en opgebouwd. Naast deze leerdoelen heb ik ook ervaren hoe het is om te werken in een groep met git. Om alles veilig te houden heeft arrash de github pagina beheert. Ik werd geinstrueerd om voor elke feature een apprate branch te maken van de dev branch. Door daarnaast met modules te werken zaten we vrij weinig in elkaars code en waren er bijna geen merge conflicten. De bestanden waar we samen in werkten waren vooral de controlers en omdat we dat wisten konden we makkelijk overzien wat er gebeurde. Omdat ik in deze week veel met de bot bezig was werd ik onofficieel een beetje chef botlogica. 
 
-[code snippet van bot]
+een van de functies die ik heb geschreven om een array te krijgen van alle kanalen die het gekozen onderwerp matchen.
+```async function getChannels(user, _subject) {
+    const CmatchingS = []
+    if (user.channelIds.length !== 0) {
+        const _channel = await Channel.find({
+            _id: {
+                $in: user.channelIds
+            },
+            subject: {$regex: new RegExp("^" + _subject, "i")}
+        }).select("_id").exec()
+        _channel.forEach(element => {
+            CmatchingS.push(element._id)
+        });
+    }
+    return CmatchingS
+}
+```
 
 #### week 4 en 5
 In week 4 heb ik omdat ik ook nog aan mijn BEM leerdoel wilde werken ook een cms pagina gebouwd. Mitch heeft mij eerst alle ins en outs van bem uitgelegd en ik heb daarna de channel overview pagina gemaakt. Om dat dit vooral kopieer en plak werk is geweest heb ik niet alles er uitgehaald en er niet zoveel tijd mee geoefend dat ik toch niet helemaal tevreden ben met dit leerdoel. Ik snap de theorie maar had bijvoorbeeld graag de landingpage gemaakt. Dit kon alleen niet omdat het zo niet uit in de verdeleing van features. Ik heb hierom van de mogelijkheid gebruik gemaakt om een van de artiekelen hier voor in te zetten. <link> gaat over mijn CSS ervaring en BEM. 
