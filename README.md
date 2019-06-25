@@ -31,29 +31,20 @@ Om dit te realizeren zijn we eind van de 3de week begonnen met coderen. We hebbe
 
 <code snippet van bot>
 
-Aan het eind van week 4 heb ik omdat ik ook nog aan mijn BEM leerdoel wilde werken een cms pagina gebouwd. Mitch heeft mij eerst alle ins en outs van bem uitgelegd en ik heb daarna de channel overview pagina gemaakt. Om dat dit vooral kopieer en plak werk is geweest heb ik niet alles er uitgehaald en er niet zoveel tijd mee geoefend dat ik toch niet helemaal tevreden ben met dit leerdoel. Ik snap de theorie maar had bijvoorbeeld graag de landingpage gemaakt omdat. Ik heb hierom van de mogelijkheid gebruik gemaakt om een van de artiekelen hier voor in te zetten. <link> gaat over mijn CSS ervaring en BEM.
+In week 4 heb ik omdat ik ook nog aan mijn BEM leerdoel wilde werken ook een cms pagina gebouwd. Mitch heeft mij eerst alle ins en outs van bem uitgelegd en ik heb daarna de channel overview pagina gemaakt. Om dat dit vooral kopieer en plak werk is geweest heb ik niet alles er uitgehaald en er niet zoveel tijd mee geoefend dat ik toch niet helemaal tevreden ben met dit leerdoel. Ik snap de theorie maar had bijvoorbeeld graag de landingpage gemaakt. Dit kon alleen niet omdat het zo niet uit in de verdeleing van features. Ik heb hierom van de mogelijkheid gebruik gemaakt om een van de artiekelen hier voor in te zetten. <link> gaat over mijn CSS ervaring en BEM. 
 
-Aan het eind van week 4 hadden we alle core functionalteiten staan en zijn mitch en ik een korte user test gaan doen om te kijken hoe mensen zonder ervaring op onze bot zouden reageren. Deze bevindingen staan onderaan dit document. Wat vooral naarboven kwam is dat de gebruiker omdat het spraak is verwacht dat de bot meer context snapt zoals een mens die snapt. 
+Op donderdag hadden we alle core functionalteiten staan en zijn mitch en ik korte user tests gaan doen om te kijken hoe mensen zonder ervaring op onze bot zouden reageren. Mijn bevindingen staan onderaan dit document maar wat vooral naarboven kwam is dat de gebruiker omdat het spraak is verwacht dat de bot meer context snapt zoals een mens die snapt. Wat dus belangrijk is is dat er veel duidelijk gemaakt moet worden in de reacties van de bot als er iest verkeerd gaat om de gebruiker in de goede richting bij te sturen. We hebben na de test onderandere extra geluidjes toe gevoegd en meer uitleg toegevoegd.
 
+in het weekend voor week 5 hebben we alles afgemaakt en hebben we op maandag een lijst gemaakt met bugs die nog gefixd moesten worden. Daarnaast zijn we alle documentatie gaan schrijven. Er is een domein naam geregistreerd en hosting ingekocht. 
 
-
-bouwen bot, mijn bijdrage, lukken de leerdoelen,
-code snippet
-
-bouwen site, lukken de leerdoelen,
-code snippet 
-
-
-samenwerking, hoe smooth ging dat.
-git ervaring
-
+#### reflectie
+Ik heb zoals ik hier boven ook al aangegeven heb zeker veel geleerd van 2 van de 3 leerdoelen. scss en bem heb ik op theoretischvlak nu door maar ga hier zelf nog in de praktijk mee oefenen. Naast deze leerdoelen uit de rubiks is het meest waardevolle toch wel het samenwerken en de techniek en theorie van de bot zelf geweest. Er zijn weinig momenten dat je 5 weken lang kunt werken aan een bijna af product in een zo nieuwe markt als deze. Ik ben erg tevreden over het resultaat en hij gaat zeker op mijn portfolio.
 
 
 #### Tests
 Om te testen hebben 2 studenten gevraagd om te gaan oefenen met de overhoorbot.
 
 wat ging er goed? uitleg over de setting.
-
 
 1.    De gebruiker ervaart dat het onduidelijk is wanneer er antwoord gegeven mag worden.
 2.    De gebruiker ervaart frustratie wanneer de bot niet goed snapt wat je bedoelt. Hierdoor gaat de bot soms terug naar het begin.
