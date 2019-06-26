@@ -49,7 +49,7 @@ async function getChannels(user, _subject) {
     return CmatchingS
 }
 ```
-Een
+
 
 
 #### week 4 en 5
